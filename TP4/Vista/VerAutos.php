@@ -30,7 +30,7 @@
                                     echo '</tr>'; 
                                 }
                             }else{
-                                echo '<p class="lead"> Actualmente no hay autos registrados </p>';
+                                echo '<p class="lead"> No hay autos registrados </p>';
                             }
                         ?>
                     </table>
