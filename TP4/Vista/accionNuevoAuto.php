@@ -5,7 +5,7 @@ include_once("../Modelo/persona.php");
 include_once("../Control/c_auto.php");
 include_once("../Modelo/auto.php");
 $datos = data_submitted();
-$objPersona = new c_persona();
+$objAuto = new c_auto();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,32 +31,29 @@ $objPersona = new c_persona();
   </head>
   <body>
 		<section >
-
-    <div class="container-fluid">
-        <div class="container col-md-10">
-            <h2>Resultado de la carga:</h2>
-            <div class="mb-3">
-                <?php
-                if($objPersona->buscar($datos) == null){
-                    if ($objPersona->alta($datos)) {
-                        echo "<h3 class='text-success'>La persona se pudo cargar con exito!</h3>";
-                    } else {
-                        echo "<h3 class='text-danger'>La persona no se pudo cargar!</h3>";
-                    }
-                }else{
-                    echo "<h3 class='text-danger'>La persona ya existe en la base de datos!</h3>";
+<div class="container-fluid">
+    <div class="container col-md-10">
+        <h2>Resultado la busqueda:</h2>
+        <div class="mb-3">
+            <?php
+            if ($objAuto->buscar($datos) == null) {
+                if ($objAuto->alta($datos)) {
+                    echo "<h3 class='text-success'>El auto se puedo cargar con exito!</h3>";
+                } else {
+                    echo "<h3 class='text-danger'>El auto no se pudo cargar porque no se encontro la persona en la base de datos!</h3>";
                 }
-                ?>
-            </div>
-            <div>
-                <div class="mb-3">
-                    <a href="nuevaPersona.php" class="btn btn-dark">Volver</a>
-                    <a href= "listaPersona.php" class="btn btn-dark">Ver lista personas</a>
-                </div>
+            } else {
+                echo "<h3 class='text-danger'>El auto ya existe en la base de datos!</h3>";
+            }
+            ?>
+        </div>
+        <div>
+            <div class="mb-3">
+                <a href="nuevoAuto.php" class="btn btn-dark">Volver</a>
             </div>
         </div>
     </div>
-              </section>
+</div>
+</section>
               </body>
 </html>
-              
