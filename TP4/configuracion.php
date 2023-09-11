@@ -23,5 +23,5 @@ $PRINCIPAL = "Location:http://".$_SERVER['HTTP_HOST']."/$PROYECTO/principal.php"
 
 $_SESSION['ROOT']=$ROOT; 
 
-
+//se puede la base de datos
 ?>
