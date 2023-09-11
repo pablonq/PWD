@@ -1,6 +1,6 @@
 <?php
     include_once("../configuracion.php");
-		include_once("../auto.php");	
+		include_once("../Control/c_auto.php");	
     $objAuto = new c_auto();
     $datosAuto = $objAuto->buscar(NULL);
 ?>
